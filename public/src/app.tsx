@@ -1,5 +1,5 @@
 import React from 'react';
-import { useActiveState } from '../../src/main';
+import useActiveState from '../../src/main';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -25,13 +25,15 @@ const Container = styled.div`
 `;
 
 export default (props: any) => {
-  const { state, sync, get } = useActiveState(() => {
+  const { state, sync, get, $ } = useActiveState(() => {
     console.log('state:', state, get('username'));
   });
 
+  console.log('state:', state);
+
   return (
     <Container>
-      <form>
+      <form autoComplete="off">
         <label className="row">
           <strong>username:</strong>
           <input type="text" name="username" onChange={sync()} />
@@ -46,12 +48,20 @@ export default (props: any) => {
         </label>
         <div className="actions">
           <button type="button">Submit</button>
+          <button type="button" onClick={e => {
+            $.reset();
+          }}>reset</button>
         </div>
       </form>
 
       <div className="result">
         <pre>
           <code>{JSON.stringify(state, null, 2)}</code>
+        </pre>
+      </div>
+      <div className="result">
+        <pre>
+          <code>isTouched: {String($.touched())}</code>
         </pre>
       </div>
     </Container>

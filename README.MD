@@ -13,14 +13,42 @@ npm install -S @jswork/use-active-state
 
 ## usage
   ```tsx
+  import React from 'react';
+  import useActiveState from '@jswork/use-active-state';
+  import styled from 'styled-components';
+
+  const Container = styled.div`
+    width: 40%;
+    margin: 30px auto 0;
+    padding: 50px;
+    border: 1px solid #ccc;
+    .row {
+      display: flex;
+      margin-bottom: 10px;
+      strong {
+        display: inline-block;
+        width: 120px;
+      }
+    }
+
+    .result {
+      background: #eee;
+      padding: 20px;
+      border: 1px dashed #f60;
+      margin-top: 10px;
+    }
+  `;
+
   export default (props: any) => {
-    const { state, sync, get } = useActiveState(() => {
+    const { state, sync, get, $ } = useActiveState(() => {
       console.log('state:', state, get('username'));
     });
 
+    console.log('state:', state);
+
     return (
       <Container>
-        <form>
+        <form autoComplete="off">
           <label className="row">
             <strong>username:</strong>
             <input type="text" name="username" onChange={sync()} />
@@ -35,12 +63,20 @@ npm install -S @jswork/use-active-state
           </label>
           <div className="actions">
             <button type="button">Submit</button>
+            <button type="button" onClick={e => {
+              $.reset();
+            }}>reset</button>
           </div>
         </form>
 
         <div className="result">
           <pre>
             <code>{JSON.stringify(state, null, 2)}</code>
+          </pre>
+        </div>
+        <div className="result">
+          <pre>
+            <code>isTouched: {String($.touched())}</code>
           </pre>
         </div>
       </Container>
