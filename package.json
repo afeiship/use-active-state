@@ -1,6 +1,6 @@
 {
   "name": "@jswork/use-active-state",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React hook for active state.",
   "license": "MIT",
   "main": "dist/index.js",
