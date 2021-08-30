@@ -19,6 +19,7 @@ npm install -S @jswork/use-active-state
 
   const Container = styled.div`
     width: 40%;
+    min-width: 400px;
     margin: 30px auto 0;
     padding: 50px;
     border: 1px solid #ccc;
