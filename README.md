@@ -84,6 +84,9 @@ npm install -S @jswork/use-active-state
   };
   ```
 
+## preview
+- http://afeiship.github.io/use-active-state/
+
 ## license
 Code released under [the MIT license](https://github.com/afeiship/use-active-state/blob/master/LICENSE.txt).
 
