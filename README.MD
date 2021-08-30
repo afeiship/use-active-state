@@ -11,14 +11,6 @@
 npm install -S @jswork/use-active-state
 ```
 
-## properties
-| Name      | Type   | Required | Default | Description                           |
-| --------- | ------ | -------- | ------- | ------------------------------------- |
-| className | string | false    | -       | The extended className for component. |
-| value     | object | false    | null    | Default value.                        |
-| onChange  | func   | false    | noop    | The change handler.                   |
-
-
 ## usage
   ```tsx
   export default (props: any) => {
