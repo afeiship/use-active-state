@@ -21,13 +21,9 @@ export interface Response {
    */
   sync: (inPath?: string) => (inEvent?: any) => void;
   /**
-   * Reset to initial state.
+   * The instance of NxReactActiveState.
    */
-  reset: () => any;
-  /**
-   * Check state if changed.
-   */
-  touched: () => boolean;
+  $: any;
 }
 
 export default (inCallback = noop, inInitialState?): Response => {
