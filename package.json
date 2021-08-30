@@ -1,6 +1,6 @@
 {
   "name": "@jswork/use-active-state",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React hook for active state.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -72,7 +72,7 @@
   },
   "dependencies": {
     "@jswork/filter-react-props": "^1.0.2",
-    "@jswork/next-react-active-state": "^1.0.9",
+    "@jswork/next-react-active-state": "^1.0.11",
     "@jswork/noop": "^1.0.0",
     "@jswork/use-force-update": "^1.0.2",
     "classnames": "^2.2.6"
@@ -80,5 +80,13 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
-  }
+  },
+  "keywords": [
+    "react",
+    "hook",
+    "active",
+    "state",
+    "component",
+    "rc"
+  ]
 }
