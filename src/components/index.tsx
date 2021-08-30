@@ -20,6 +20,14 @@ export interface Response {
    * Sync function.
    */
   sync: (inPath?: string) => (inEvent?: any) => void;
+  /**
+   * Reset to initial state.
+   */
+  reset: () => any;
+  /**
+   * Check state if changed.
+   */
+  touched: () => boolean;
 }
 
 export default (inCallback = noop, inInitialState?): Response => {

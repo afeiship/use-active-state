@@ -72,7 +72,7 @@
   },
   "dependencies": {
     "@jswork/filter-react-props": "^1.0.2",
-    "@jswork/next-react-active-state": "^1.0.8",
+    "@jswork/next-react-active-state": "^1.0.9",
     "@jswork/noop": "^1.0.0",
     "@jswork/use-force-update": "^1.0.2",
     "classnames": "^2.2.6"
