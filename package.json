@@ -71,6 +71,7 @@
     "vite-plugin-pwa": "^0.7.3"
   },
   "dependencies": {
+    "@jswork/next-deep-clone": "^1.0.0",
     "@jswork/next-react-active-state": "^1.0.13",
     "@jswork/noop": "^1.0.0",
     "@jswork/use-force-update": "^1.0.2"
