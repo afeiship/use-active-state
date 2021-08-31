@@ -28,7 +28,7 @@ export interface Response {
 
 export default (inCallback = noop, inInitialState?): Response => {
   const forceUpdate = useForceUpdate();
-  const initialState = inInitialState || {};
+  const initialState = NxReactActiveState.get(inInitialState || {});
   const activeStateRef = useRef(
     NxReactActiveState.build(initialState, () => {
       inCallback();
