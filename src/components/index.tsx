@@ -1,5 +1,4 @@
 import { useRef } from 'react';
-import noop from '@jswork/noop';
 import useForceUpdate from '@jswork/use-force-update';
 import NxReactActiveState from '@jswork/next-react-active-state';
 import deepClone from '@jswork/next-deep-clone';
@@ -27,12 +26,11 @@ export interface Response {
   $: any;
 }
 
-export default (inCallback = noop, inInitialState?): Response => {
+export default (inInitialState?): Response => {
   const forceUpdate = useForceUpdate();
   const initialState = deepClone(inInitialState || {});
   const activeStateRef = useRef(
     NxReactActiveState.build(initialState, () => {
-      inCallback();
       forceUpdate();
     })
   );
